@@ -1,0 +1,118 @@
+.anxiety-container {
+  background-color: #f5f1ea; /* Beige background for calm vibe */
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  font-family: var(--font-merriweather);
+  color: #333;
+  line-height: 1.6;
+  font-size: 18px; /* Increased base font size */
+}
+
+.anxiety-content {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: transparent; /* Changed from white to transparent */
+  padding: 2rem;
+  border-radius: 12px;
+  /* Removed box-shadow since no background */
+}
+
+.anxiety-title {
+  font-size: 2.5rem; /* Increased from 2.2rem */
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #222;
+  font-family: var(--font-merriweather);
+}
+
+.anxiety-subtitle {
+  font-size: 1.6rem; /* Increased from 1.4rem */
+  font-weight: 400;
+  margin-bottom: 2rem;
+  color: #444;
+  line-height: 1.4;
+  font-family: var(--font-merriweather);
+}
+
+.anxiety-heading {
+  font-size: 1.7rem; /* Increased from 1.5rem */
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+  font-family: var(--font-merriweather);
+}
+
+.anxiety-list, .anxiety-list-numbered {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+  font-size: 18px; /* Ensure consistent font size */
+}
+
+.anxiety-list li, .anxiety-list-numbered li {
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.telegram-button {
+  display: inline-block;
+  background-color: #e0c2d0; /* Gentle but noticeable color */
+  color: #444;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.3rem; /* Increased from 1.1rem */
+  font-weight: 400;
+  text-decoration: none;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  font-family: var(--font-merriweather);
+}
+
+.telegram-button:hover {
+  background-color: #d4afc1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.disclaimer {
+  font-size: 1rem; /* Increased from 0.9rem */
+  color: #777;
+  margin-top: 3rem;
+  font-style: italic;
+  border-top: 1px solid #eee;
+  padding-top: 1.5rem;
+  font-weight: 300;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-weight: 300;
+  font-size: 18px; /* Ensure consistent size */
+}
+
+strong {
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .anxiety-content {
+    padding: 1.5rem;
+  }
+  
+  .anxiety-title {
+    font-size: 2rem; /* Increased from 1.8rem */
+  }
+  
+  .anxiety-subtitle {
+    font-size: 1.4rem; /* Increased from 1.2rem */
+  }
+  
+  .anxiety-container {
+    font-size: 16px; /* Slightly smaller on mobile but still larger than original */
+  }
+  
+  p, .anxiety-list, .anxiety-list-numbered {
+    font-size: 16px; /* Consistent with container */
+  }
+} 

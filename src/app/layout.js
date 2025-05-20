@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navigation from "./components/Navigation";
 
 const inter = Inter({
   subsets: ['latin', 'cyrillic'],
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ru" className={inter.variable}>
       <body>
+        {/* <Navigation /> */}
         {children}
       </body>
     </html>
