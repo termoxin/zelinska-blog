@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ru" className={montserrat.variable}>
       <body>
-        {/* <Navigation /> */}
+        <Navigation />
         {children}
       </body>
     </html>
