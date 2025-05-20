@@ -1,11 +1,11 @@
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Navigation from "./components/Navigation";
 
-const inter = Inter({
+const montserrat = Montserrat({
   subsets: ['latin', 'cyrillic'],
   weight: ['400', '500', '600', '700'],
-  variable: "--font-inter",
+  variable: "--font-montserrat",
   display: "swap",
 });
 
@@ -15,13 +15,14 @@ export const metadata = {
   viewport: {
     width: 'device-width',
     initialScale: 1,
-    maximumScale: 5,
+    maximumScale: 2,
+    userScalable: true,
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ru" className={inter.variable}>
+    <html lang="ru" className={montserrat.variable}>
       <body>
         {/* <Navigation /> */}
         {children}
