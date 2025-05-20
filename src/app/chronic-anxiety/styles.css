@@ -125,7 +125,7 @@ strong {
   }
   
   p, .anxiety-list, .anxiety-list-numbered {
-    font-size: 18px; /* Increased from 16px */
+    font-size: 14px; /* Increased from 16px */
     line-height: 1.7; /* Add more line height for better readability */
   }
   
