@@ -19,6 +19,9 @@ export const metadata = {
     maximumScale: 2,
     userScalable: true,
   },
+  other: {
+    'facebook-domain-verification': 'vc0i0o60zp9muc4kkxb5drhvazxk9e',
+  },
 };
 
 export default function RootLayout({ children }) {
