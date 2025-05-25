@@ -1,13 +1,13 @@
-import { Montserrat } from "next/font/google";
+import { Roboto } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Navigation from "./components/Navigation";
 import { PostHogProvider } from "./components/PostHogProvider";
 
-const montserrat = Montserrat({
+const roboto = Roboto({
   subsets: ['latin', 'cyrillic'],
-  weight: ['400', '500', '600', '700'],
-  variable: "--font-montserrat",
+  weight: ['300', '400', '500', '700'],
+  variable: "--font-roboto",
   display: "swap",
 });
 
@@ -42,7 +42,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ru" className={montserrat.variable}>
+    <html lang="ru" className={roboto.variable}>
       <body>
         <PostHogProvider>
           {/* Meta Pixel Code */}

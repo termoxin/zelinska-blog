@@ -11,10 +11,10 @@ const ReviewSlider = () => {
   const [touchEnd, setTouchEnd] = useState(null);
   
   const reviews = [
-    '/articles/chronic-anxiety/review-1.jpg',
     '/articles/chronic-anxiety/review-4.jpg',
     '/articles/chronic-anxiety/review-3.jpg',
-    '/articles/chronic-anxiety/review-2.png'
+    '/articles/chronic-anxiety/review-2.png',
+    '/articles/chronic-anxiety/review-1.jpg',
   ];
 
   // Minimum distance for a swipe
