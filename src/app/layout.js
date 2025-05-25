@@ -55,7 +55,7 @@ export default function RootLayout({ children }) {
             />
           </noscript>
           {/* End Meta Pixel Code */}
-          <Navigation />
+          {/* <Navigation /> */}
           {children}
         </PostHogProvider>
       </body>
