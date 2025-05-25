@@ -11,15 +11,16 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 2,
+  userScalable: true,
+};
+
 export const metadata = {
   title: "Психолог Анастасия",
   description: "Психолог для тревожных людей. Работа с тревожностью, ОКР, паническими атаками.",
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 2,
-    userScalable: true,
-  },
   icons: {
     icon: [
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
@@ -28,9 +29,6 @@ export const metadata = {
     ],
     apple: [
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }
-    ],
-    other: [
-      { rel: 'mask-icon', url: '/safari-pinned-tab.svg', color: '#4f46e5' }
     ]
   },
   manifest: '/site.webmanifest',
@@ -44,16 +42,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ru" className={montserrat.variable}>
-      <head>
-        {/* Additional favicon links for better browser support */}
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-        <meta name="msapplication-TileColor" content="#4f46e5" />
-        <meta name="theme-color" content="#4f46e5" />
-      </head>
       <body>
         <PostHogProvider>
           {/* Meta Pixel Code */}
