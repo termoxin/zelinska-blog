@@ -14,7 +14,7 @@ export default function PsychologistPage() {
         <p>
           Я сама знаю, каково это — жить с тревогой. Поэтому мне важно не только давать работающие инструменты, но и создавать тёплое, безопасное пространство, где можно быть собой, расслабиться и почувствовать опору.
         </p>
-        <Link href="https://t.me/psyrebt" target="_blank" className="btn">
+        <Link href="https://t.me/psyrebt" target="_blank" className="btn" onClick={() => fbq('track', 'Lead')}>
           Записаться
         </Link>
       </header>
@@ -136,8 +136,10 @@ export default function PsychologistPage() {
       <section className="section">
         <h2>📩 Контакты</h2>
         <p>Записаться можно в Telegram:</p>
-        <a href="https://t.me/psyrebt" target="_blank" className="link">
-          @psyrebt
+        <a href="https://t.me/psyrebt" 
+           class="tg-button"
+           onclick="fbq('track', 'Lead');">
+          Записаться
         </a>
         <p style={{ fontSize: '14px', color: '#6b7280' }}>
           Обычно отвечаю в течение 24 часов
