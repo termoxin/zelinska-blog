@@ -106,6 +106,101 @@ const ReviewSlider = () => {
   );
 };
 
+// Interactive Contact Section Component
+const ContactSection = () => {
+  const [activeButton, setActiveButton] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  const handleButtonClick = (buttonType) => {
+    setActiveButton(buttonType);
+    setTimeout(() => setActiveButton(null), 300);
+  };
+
+  return (
+    <div className={`contact-section ${isVisible ? 'visible' : ''}`}>
+      <div className="contact-header">
+        <div className="contact-icon">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none">
+            <path d="M21 11.5C21.0034 12.8199 20.6951 14.1219 20.1 15.3C19.3944 16.7118 18.3098 17.8992 16.9674 18.7293C15.6251 19.5594 14.0782 19.9994 12.5 20C11.1801 20.0035 9.87812 19.6951 8.7 19.1L3 21L4.9 15.3C4.30493 14.1219 3.99656 12.8199 4 11.5C4.00061 9.92179 4.44061 8.37488 5.27072 7.03258C6.10083 5.69028 7.28825 4.60557 8.7 3.90003C9.87812 3.30496 11.1801 2.99659 12.5 3.00003H13C15.0843 3.11502 17.053 3.99479 18.5291 5.47089C20.0052 6.94699 20.885 8.91568 21 11V11.5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </div>
+        <h4 className="contact-title">Готовы начать работать с тревогой?</h4>
+        <p className="contact-subtitle">Оставьте заявку, и я лично напишу вам в Telegram</p>
+      </div>
+
+      <div className="contact-steps">
+        <div className="step">
+          <div className="step-number">1</div>
+          <div className="step-text">Выберем удобное время</div>
+        </div>
+        <div className="step">
+          <div className="step-number">2</div>
+          <div className="step-text">Обсудим оплату</div>
+        </div>
+        <div className="step">
+          <div className="step-number">3</div>
+          <div className="step-text">Отправлю анкету</div>
+        </div>
+      </div>
+
+      <div className="contact-buttons">
+        <div className="contact-option">
+          <h5 className="option-title">
+            <span className="option-icon">🤖</span>
+            Удобнее всего — через бота
+          </h5>
+          <a 
+            href="https://t.me/ChatWithAnastasiaBot" 
+            className={`contact-button primary ${activeButton === 'bot' ? 'active' : ''}`}
+            onClick={() => {
+              handleButtonClick('bot');
+              if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+            }}
+          >
+            <div className="button-content">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a205.66 205.66 0 0 1-2.849 1.09c-.896.335-1.509.623-1.509 1.268 0 .54.44.97.982 1.268.632.347 1.493.623 2.362.623.374 0 .748-.042 1.123-.127.632-.143 1.315-.347 2.068-.623l3.92-1.518a2.242 2.242 0 0 1 1.022-.215c.374 0 .748.085 1.123.215.632.215 1.315.54 2.068.896l4.133 1.937c.374.17.748.255 1.123.255.632 0 1.264-.17 1.764-.51.5-.34.896-.81 1.123-1.352.374-.896.374-1.937 0-2.833l-3.33-8.609a2.242 2.242 0 0 0-1.268-1.268 2.242 2.242 0 0 0-1.537-.255z" fill="currentColor"/>
+              </svg>
+              <span>Написать в бот</span>
+            </div>
+            <div className="button-description">Бот задаст пару вопросов и передаст их мне</div>
+          </a>
+        </div>
+
+        <div className="contact-divider">
+          <span>или</span>
+        </div>
+
+        <div className="contact-option">
+          <h5 className="option-title">
+            <span className="option-icon">✉️</span>
+            Можно написать напрямую
+          </h5>
+          <a 
+            href="https://t.me/psyrebt" 
+            className={`contact-button secondary ${activeButton === 'direct' ? 'active' : ''}`}
+            onClick={() => {
+              handleButtonClick('direct');
+              if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+            }}
+          >
+            <div className="button-content">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a205.66 205.66 0 0 1-2.849 1.09c-.896.335-1.509.623-1.509 1.268 0 .54.44.97.982 1.268.632.347 1.493.623 2.362.623.374 0 .748-.042 1.123-.127.632-.143 1.315-.347 2.068-.623l3.92-1.518a2.242 2.242 0 0 1 1.022-.215c.374 0 .748.085 1.123.215.632.215 1.315.54 2.068.896l4.133 1.937c.374.17.748.255 1.123.255.632 0 1.264-.17 1.764-.51.5-.34.896-.81 1.123-1.352.374-.896.374-1.937 0-2.833l-3.33-8.609a2.242 2.242 0 0 0-1.268-1.268 2.242 2.242 0 0 0-1.537-.255z" fill="currentColor"/>
+              </svg>
+              <span>Написать в Telegram</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default function ChronicAnxietyPage() {
   return (
     <div className="anxiety-container">
@@ -243,30 +338,7 @@ export default function ChronicAnxietyPage() {
 
         <h3 className="anxiety-heading">Как записаться и получить помощь</h3>
 
-        <h4>🧭 Готовы начать работать с тревогой?</h4>
-
-        <p>Оставьте заявку, и я лично напишу вам в Telegram.</p>
-
-        <p>Мы выберем удобное время сессии, я расскажу, как внести оплату, и отправлю анкету, чтобы подготовиться к встрече.</p>
-
-        <h4>📲 Удобнее всего — через бота</h4>
-
-        <a href="https://t.me/ChatWithAnastasiaBot" 
-           class="tg-button"
-           onclick="fbq('track', 'Lead');">
-          @ChatWithAnastasiaBot
-        </a>
-        <p><em>(Бот задаст пару вопросов и передаст их мне)</em></p>
-
-        <p>или</p>
-
-        <h4>✉️ Можно написать напрямую</h4>
-
-        <a href="https://t.me/psyrebt" 
-           class="tg-button"
-           onclick="fbq('track', 'Lead');">
-          @psyrebt
-        </a>
+        <ContactSection />
 
         <p>Меня зовут Анастасия Зелинская. Я психолог и работаю с тревожностью, перфекционизмом и самокритикой.</p>
 
