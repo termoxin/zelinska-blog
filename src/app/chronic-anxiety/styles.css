@@ -416,7 +416,6 @@ strong {
 .contact-buttons {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
 }
 
 .contact-option {
@@ -544,7 +543,7 @@ strong {
   }
   
   .step {
-    max-width: 120px;
+    max-width: 100px;
   }
   
   .contact-button {
@@ -570,6 +569,7 @@ strong {
 }
 
 .about-photo {
+  align-self: center;
   flex-shrink: 0;
 }
 
