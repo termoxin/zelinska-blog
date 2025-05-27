@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { initPostHog, trackEvent } from '../../lib/posthog';
 import './styles.css';
 
 // Elegant Review Slider Component
@@ -113,11 +114,20 @@ const ContactSection = () => {
 
   useEffect(() => {
     setIsVisible(true);
+    // Initialize PostHog
+    initPostHog();
   }, []);
 
   const handleButtonClick = (buttonType) => {
     setActiveButton(buttonType);
     setTimeout(() => setActiveButton(null), 300);
+    
+    // Track PostHog event
+    trackEvent('text_to_bot', {
+      button_type: buttonType,
+      page: 'chronic-anxiety',
+      timestamp: new Date().toISOString()
+    });
   };
 
   return (
@@ -210,6 +220,11 @@ export default function ChronicAnxietyPage() {
             className="guide-button"
             onClick={() => {
               if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+              trackEvent('guide_clicked', {
+                guide_type: '10_phrases_anxiety',
+                page: 'chronic-anxiety',
+                timestamp: new Date().toISOString()
+              });
             }}
           >
             📥Получить гайд: 10 фраз при тревоге
