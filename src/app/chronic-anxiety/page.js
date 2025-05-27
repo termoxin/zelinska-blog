@@ -122,72 +122,26 @@ const ContactSection = () => {
 
   return (
     <div className={`contact-section ${isVisible ? 'visible' : ''}`}>
-      <div className="contact-header">
-        <div className="contact-icon">
-          <svg width="64" height="64" viewBox="0 0 24 24" fill="none">
-            <path d="M21 11.5C21.0034 12.8199 20.6951 14.1219 20.1 15.3C19.3944 16.7118 18.3098 17.8992 16.9674 18.7293C15.6251 19.5594 14.0782 19.9994 12.5 20C11.1801 20.0035 9.87812 19.6951 8.7 19.1L3 21L4.9 15.3C4.30493 14.1219 3.99656 12.8199 4 11.5C4.00061 9.92179 4.44061 8.37488 5.27072 7.03258C6.10083 5.69028 7.28825 4.60557 8.7 3.90003C9.87812 3.30496 11.1801 2.99659 12.5 3.00003H13C15.0843 3.11502 17.053 3.99479 18.5291 5.47089C20.0052 6.94699 20.885 8.91568 21 11V11.5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </div>
-        <h4 className="contact-title">Готовы начать работать с тревогой?</h4>
-        <p className="contact-subtitle">Оставьте заявку, и я лично напишу вам в Telegram</p>
-      </div>
+      <div className="contact-content">
+        <p className="contact-intro">
+          💡 Готова поработать с тревогой — но не уверена, с чего начать?<br />
+          Просто напиши. Я лично свяжусь с тобой и подскажу, что делать дальше.
+        </p>
 
-      <div className="contact-steps">
-        <div className="step">
-          <div className="step-number">1</div>
-          <div className="step-text">Выберем удобное время</div>
-        </div>
-        <div className="step">
-          <div className="step-number">2</div>
-          <div className="step-text">Обсудим оплату</div>
-        </div>
-        <div className="step">
-          <div className="step-number">3</div>
-          <div className="step-text">Отправлю анкету</div>
-        </div>
-      </div>
+        <p className="contact-description">
+          📲 Нажав на кнопку, ты перейдёшь в Telegram-бот. Он задаст пару вопросов, чтобы я могла лучше понять, как помочь — и передаст их мне.
+        </p>
 
-      <div className="contact-buttons">
-        <div className="contact-option">
-          <h5 className="option-title">
-            <span className="option-icon">🤖</span>
-            Удобнее всего — через бота
-          </h5>
+        <div className="contact-button-wrapper">
           <a 
             href="https://t.me/ChatWithAnastasiaBot" 
-            className={`contact-button primary ${activeButton === 'bot' ? 'active' : ''}`}
+            className={`contact-button-new ${activeButton === 'bot' ? 'active' : ''}`}
             onClick={() => {
               handleButtonClick('bot');
               if (typeof fbq !== 'undefined') fbq('track', 'Lead');
             }}
           >
-            <div className="button-content">
-              <span>Написать в бот</span>
-            </div>
-            <div className="button-description">Бот задаст пару вопросов и передаст их мне</div>
-          </a>
-        </div>
-
-        <div className="contact-divider">
-          <span>или</span>
-        </div>
-
-        <div className="contact-option">
-          <h5 className="option-title">
-            <span className="option-icon">✉️</span>
-            Можно написать напрямую
-          </h5>
-          <a 
-            href="https://t.me/psyrebt" 
-            className={`contact-button secondary ${activeButton === 'direct' ? 'active' : ''}`}
-            onClick={() => {
-              handleButtonClick('direct');
-              if (typeof fbq !== 'undefined') fbq('track', 'Lead');
-            }}
-          >
-            <div className="button-content">
-              <span>Написать в Telegram</span>
-            </div>
+            🔎 Узнать, как это работает и подойдёт ли мне
           </a>
         </div>
       </div>
@@ -247,6 +201,21 @@ export default function ChronicAnxietyPage() {
         <p><strong>Знакомо?</strong> Возможно, вы уже на одном из этих этапов — и боитесь, что дальше только хуже. Но этот круг можно разорвать.</p>
 
         <p><strong>Как?</strong> Найти ту самую установку, которая гонит вас без остановки. Когда она теряет силу — тревога уходит, отдых становится возможным, а вы возвращаете себе силы и ясность.</p>
+
+        <div className="guide-section">
+          <p>✨ Чтобы не возвращаться в этот круг снова и снова — я собрала гайд с 10 фразами, которые помогают моим клиенткам в тревоге.</p>
+          <p>Забери его — пусть рядом будет что-то, что поддерживает, когда сложно.</p>
+          <a 
+            href="https://t.me/ChatWithAnastasiaBot" 
+            className="guide-button"
+            onClick={() => {
+              if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+            }}
+          >
+            📥Получить гайд: 10 фраз при тревоге
+          </a>
+          <p className="guide-note">Без подписки. Просто перейди в Telegram — и получи гайд.</p>
+        </div>
 
         <h3 className="anxiety-heading">История одной айтишницы</h3>
 
